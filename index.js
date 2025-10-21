@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 
 // IMPORTANT: Render sets the PORT environment variable.
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
 // A simple in-memory list of quotes
 const quotes = [
