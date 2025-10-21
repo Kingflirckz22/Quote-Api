@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 // IMPORTANT: Render sets the PORT environment variable.
@@ -9,7 +10,17 @@ const quotes = [
   "The best way to predict the future is to create it.",
   "Life is 10% what happens to us and 90% how we react to it.",
   "Your time is limited, don't waste it living someone else's life.",
+  "Simplicity is the soul of Efficiency",
+  "Testing leads to failure, Failure leads to understanding",
+  "Do not watch the clock, Do what it does, Keep going",
+  "Knowledge is power, But might be your demise",
+
 ];
+
+
+app.use(cors());
+//Render sets the PORT environment variable.
+const PORT = process.env.PORT || 3000;
 
 // Endpoint for the root URL
 app.get('/', (req, res) => {
