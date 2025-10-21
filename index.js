@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 
 // IMPORTANT: Render sets the PORT environment variable.
-// const PORT = process.env.PORT || 3000;
+
 
 // A simple in-memory list of quotes
 const quotes = [
@@ -17,8 +17,13 @@ const quotes = [
 
 ];
 
+// Be specific about who can use your API
+const VERCEL_FRONTEND_URL = 'https://quote-frontend-three.vercel.app'; 
 
-app.use(cors());
+app.use(cors({
+  origin: VERCEL_FRONTEND_URL
+}));
+// app.use(cors());
 //Render sets the PORT environment variable.
 const PORT = process.env.PORT || 3000;
 
