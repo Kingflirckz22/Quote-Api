@@ -14,15 +14,24 @@ const quotes = [
   "Testing leads to failure, Failure leads to understanding",
   "Do not watch the clock, Do what it does, Keep going",
   "Knowledge is power, But might be your demise",
+  "Always remeber at the end of the day, it's always night",
 
 ];
 
-// Be specific about who can use your API
-const VERCEL_FRONTEND_URL = 'https://quote-frontend-three.vercel.app'; 
+
+// Get the allowed URL from an environment variable
+// We will set this variable in Dokploy
+const FRONTEND_URL = process.env.FRONTEND_URL; 
 
 app.use(cors({
-  origin: VERCEL_FRONTEND_URL
+  origin: FRONTEND_URL
 }));
+// Be specific about who can use your API
+// const VERCEL_FRONTEND_URL = 'https://quote-frontend-three.vercel.app'; 
+
+// app.use(cors({
+//   origin: VERCEL_FRONTEND_URL
+// }));
 // app.use(cors());
 //Render sets the PORT environment variable.
 const PORT = process.env.PORT || 3000;
