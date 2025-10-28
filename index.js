@@ -21,7 +21,7 @@ const quotes = [
 
 // Get the allowed URL from an environment variable
 // We will set this variable in Dokploy
-const FRONTEND_URL = 'http://quoteen-gegqit-c7f852-3-150-110-170.traefik.me/'; 
+const FRONTEND_URL = process.env.FRONTEND_URL; 
 
 app.use(cors({
   origin: FRONTEND_URL
