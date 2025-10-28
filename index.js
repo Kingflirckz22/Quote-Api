@@ -22,7 +22,7 @@ const quotes = [
 // Get the allowed URL from an environment variable
 // We will set this variable in Dokploy
 const FRONTEND_URL = process.env.FRONTEND_URL; 
-
+console.log("Allowed Frontend Origin:", FRONTEND_URL);
 app.use(cors({
   origin: FRONTEND_URL
 }));
